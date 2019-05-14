@@ -14,12 +14,15 @@ class hero:
 			else:
 				person.points -= person.power
 				person.life = int(input("how much life do he have? "))
-				if person.life>= person.points:
-					print("no, you should choose less then " + person.points + "points")
+				if person.life > person.points:
+					print("no, you should choose up to" + person.points + "points")
 				else:
 					person.points -= person.life
-					person.shild = int(input("how much shild do he have? "))
-					answer = input("is this ok now? ")
+					person.shild = int(input("how much shield do he have? "))
+					if person.shild > person.points:
+						print("no, you should choose up to" + person.points + "points")
+					else:
+						answer = input("is this ok now? ")
 		
 	def attack(person, other):
 		hit = person.power - other.shild
